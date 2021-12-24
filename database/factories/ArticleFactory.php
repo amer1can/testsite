@@ -23,6 +23,7 @@ class ArticleFactory extends Factory
             'slug' => $slug,
             'img' => 'https://via.placeholder.com/600/5F113B/FFFFFF/?text=SOME_IMAGE',
             'created_at' => $this->faker->dateTimeBetween('-1 years'),
+            'published_at' => now()
         ];
     }
 }

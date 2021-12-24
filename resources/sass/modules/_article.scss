@@ -1,0 +1,15 @@
+.tag {
+    color: #a1a1a1;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
+
+.toast {
+    display: block!important;
+}
+
+.toast.showing {
+    opacity: 1!important;
+}
