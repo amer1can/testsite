@@ -13,16 +13,22 @@
             <p class="card-text">{{ article.body }}</p>
             <p>Опубликованно:  <i>{{ article.created_at }}</i></p>
             <div class="mt-3">
-                <span class="badge bg-danger">{{ likes }} <i class="far fa-thumbs-up"></i></span>
-                <span class="badge bg-danger">{{ views }} <i class="far fa-eye"></i></span>
+                <views-component></views-component>
+                <likes-component></likes-component>
             </div>
         </div>
     </div>
 </template>
 
 <script>
+import LikesComponent from "./LikesComponent";
+import ViewsComponent from "./ViewsComponent";
+
 export default {
     name: "ArticleComponent",
+    components: {
+        LikesComponent,
+        ViewsComponent},
     computed: {
         article() {
             return this.$store.state.article;
@@ -30,12 +36,6 @@ export default {
         tagsLength() {
             return this.$store.state.article.tags.length;
         },
-        views() {
-            return this.$store.getters.articleViews;
-        },
-        likes() {
-            return this.$store.getters.articleLikes;
-        }
     }
 }
 </script>
